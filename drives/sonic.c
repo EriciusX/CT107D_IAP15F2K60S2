@@ -1,5 +1,11 @@
 #include "sonic.h"
 #include "timer.h"
+
+/*
+* @brief 超声波接收 
+* @Param None
+* @retval 返回距离值
+*/
 uchar wave_recv(void)
 {
 	uchar dist, num = 10;

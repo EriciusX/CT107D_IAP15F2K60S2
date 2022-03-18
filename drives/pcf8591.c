@@ -1,8 +1,18 @@
+/*--------------------------------
+需要去Target Options里的C51选项中，
+在Preprocessor Symbols下的Define中，
+输入#ifdef后的定义，才可定义对应函数
+---------------------------------*/
+
+
 #include "iic.h"
 #include "pcf8591.h"
 
 
-
+/*
+* @brief AC转换 
+* @Param None
+*/
 #ifdef pcf8591_adc
 uchar pcf8591_Adc(void)
 {
@@ -25,6 +35,10 @@ uchar pcf8591_Adc(void)
 	return temp;
 }
 #endif
+/*
+* @brief DC转换 
+* @Param uchar dat 
+*/
 #ifdef pcf8591_dac
 void pcf8591_Dac(uchar dat)
 {

@@ -25,12 +25,13 @@ void seg_tran(uchar *seg_buf, uchar *seg_code)
 			case 'C': temp = 0xC6; break;
 			case ' ': temp = 0xFF; break;
 			case '-': temp = 0xBF; break;
+			case '.': temp = 0x7F; break;
 
 		}
 		//判断后一位是否是小数点
 		if(seg_buf[j + 1] == '.')
 		{
-			temp &= 0x7F;
+			temp = temp & 0x7F;
 			j++;
 		}
 		seg_code[i] = temp;
@@ -49,5 +50,6 @@ void seg_disp(uchar *seg_code, uchar seg_pos)
 	Select_HC573(6);
 	P2 &= 0x1F;
 	P0 = seg_code[seg_pos];
+	Select_HC573(7);
 	P2 &= 0x1F;
 }

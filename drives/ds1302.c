@@ -56,8 +56,12 @@ unsigned char Read_Ds1302_Byte ( unsigned char address )
 	SDA=1;	_nop_();
 	return (temp);			
 }
-
-void set_rtc(unsigned char* pucrtc)
+/*----------------------------------------------------*/
+/*
+* @brief 设置时钟时间 
+* @Param uchar *pucrtc 存放时间的数组 
+*/
+void set_rtc(uchar* pucrtc)
 {
 	uchar temp;	
 	Write_Ds1302_Byte(0x8E, 0); //允许写操作
@@ -70,8 +74,11 @@ void set_rtc(unsigned char* pucrtc)
 	Write_Ds1302_Byte(0x80, temp);
 	Write_Ds1302_Byte(0x8E, 0x80); //禁止写操作
 }
-
-void read_rtc(unsigned char* pucrtc)
+/*
+* @brief 读取时钟当前时间 
+* @Param uchar *pucrtc 存放读取信息数组 
+*/
+void read_rtc(uchar *pucrtc)
 {
 	uchar temp;
 	temp = Read_Ds1302_Byte(0x85);

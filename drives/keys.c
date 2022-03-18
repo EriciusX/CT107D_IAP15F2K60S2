@@ -16,6 +16,7 @@ uchar key_read(void)
 	uchar key_val;
 	P44 = 0; P42 = 1; P35 = 1; P34 = 1;
 	key_new = P3;
+
 	P44 = 1; P42 = 0;
 	key_new = (key_new<<4)|(P3&0x0F);
 	P42 = 1; P35 = 0;

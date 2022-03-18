@@ -65,7 +65,11 @@ bit init_ds18b20(void)
   
   	return initflag;
 }
-
+/*
+* @brief 读取温度 
+* @Param None 
+* @retval 返回16位温度值
+*/
 uint rd_temperature(void)
 {
 	uchar low, high;
