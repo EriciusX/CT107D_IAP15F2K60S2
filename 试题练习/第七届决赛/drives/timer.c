@@ -1,9 +1,9 @@
 #include "timer.h"
 /*
-* @brief ¶¨Ê±Æ÷0³õÊ¼»¯ 
+* @brief ï¿½ï¿½Ê±ï¿½ï¿½0ï¿½ï¿½Ê¼ï¿½ï¿½ 
 * @Param None
 */
-void Timer0Init(void)		//100us@12.000MHz
+void Timer0Init(void)
 {
 	AUXR &= 0x7f;	
 	TMOD |= 5;		
@@ -15,7 +15,7 @@ void Timer0Init(void)		//100us@12.000MHz
 
 
 /*
-* @brief ¶¨Ê±Æ÷1³õÊ¼»¯ 
+* @brief ï¿½ï¿½Ê±ï¿½ï¿½1ï¿½ï¿½Ê¼ï¿½ï¿½ 
 * @Param None 
 */
 void Timer1Init(void)		//1??@11.0592MHz

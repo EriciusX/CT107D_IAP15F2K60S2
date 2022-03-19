@@ -92,13 +92,13 @@ void key_prog(void)
 							   }break;	
 					case 0x30: if(++state == 0x32) state = 0x30; 
 				}break;
-		case 5:	state = 0x00;   //ÆµÂÊ
+		case 5:	state = 0x00;   //Æµï¿½ï¿½
 				break;
-		case 6:	state = 0x10; 	//µçÑ¹
+		case 6:	state = 0x10; 	//ï¿½ï¿½Ñ¹
 				break;
-		case 7:	state = 0x20;	//Ê±¼ä
+		case 7:	state = 0x20;	//Ê±ï¿½ï¿½
 				break;
-		case 9:	state = 0x30;	//ÊÂ¼þ
+		case 9:	state = 0x30;	//ï¿½Â¼ï¿½
 				if(state == 0x30)
 				{
 					eeprom_read(event, 4, 4);
@@ -111,7 +111,7 @@ void key_prog(void)
 		case 11: switch(state)
 				 {	
 					case 0x11: if(vol_high <= 4500) vol_high += 500; break;
-					case 0x12:	if((vol_high - vol_low) > 500) vol_low += 500; break;
+					case 0x12: if((vol_high - vol_low) > 500) vol_low += 500; break;
 				 	case 0x21: if(++rtc[0] >= 24) rtc[0] = 0; break;
 					case 0x22: if(++rtc[1] >= 60) rtc[1] = 0; break;
 					case 0x23: if(++rtc[2] >= 60) rtc[2] = 0; 
