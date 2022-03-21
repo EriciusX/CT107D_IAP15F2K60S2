@@ -81,7 +81,7 @@ void key_prog(void)
 
 	key_val = key_read();
 	key_down = key_val & (key_old ^ key_val);
-	key_up = !key_val & (key_old ^ key_val);
+	key_up = ~key_val & (key_old ^ key_val);
 
 	if(key_down != key_down_old) led_dly = 0;
 
